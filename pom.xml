@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.huangda7</groupId>
+    <artifactId>root</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>root</name>
+    <packaging>pom</packaging>
+    <description>Demo project for Spring Boot--Root project</description>
+
+    <modules><!-- 将所有模块维护成root的子模块-->
+        <module>parent/dependency_management</module>
+        <module>parent/parent</module>
+    </modules>
+</project>
