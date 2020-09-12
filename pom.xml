@@ -12,5 +12,6 @@
     <modules><!-- 将所有模块维护成root的子模块-->
         <module>parent/dependency_management</module>
         <module>parent/parent</module>
+        <module>eureka-server</module>
     </modules>
 </project>
