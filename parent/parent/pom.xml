@@ -111,8 +111,8 @@
 <!--            <scope>test</scope>-->
 <!--        </dependency>-->
     </dependencies>
-<!--    <build>-->
-<!--        <plugins>-->
+    <build>
+        <plugins>
 <!--            <plugin>-->
 <!--                <groupId>org.codehaus.mojo</groupId>-->
 <!--                <artifactId>build-helper-maven-plugin</artifactId>-->
@@ -131,9 +131,9 @@
 <!--                    </execution>-->
 <!--                </executions>-->
 <!--            </plugin>-->
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
 <!--                <executions>-->
 <!--                    <execution>-->
 <!--                        <goals>-->
@@ -146,9 +146,9 @@
 <!--                        </configuration>-->
 <!--                    </execution>-->
 <!--                </executions>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
+            </plugin>
+        </plugins>
+    </build>
 <!--    <profiles>-->
 <!--        <profile>             &lt;!&ndash; run mvn clean install -Ptest -DskipTests=false to run this test and integrate with sonar qube server &ndash;&gt;-->
 <!--            <id>gitlab_ci</id>-->

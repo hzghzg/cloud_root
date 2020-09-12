@@ -13,5 +13,6 @@
         <module>parent/dependency_management</module>
         <module>parent/parent</module>
         <module>eureka-server</module>
+        <module>consumer</module>
     </modules>
 </project>
