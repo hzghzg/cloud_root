@@ -5,3 +5,11 @@ spring:
     active: local
   application:
     name: consumer
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 5000
+  OkToRetryOnAllOperations: true
+  MaxAutoRetriesNextServer: 1
+  MaxAutoRetries: 1
+  restclient:
+    enabled: true

@@ -7,3 +7,8 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10 #发送心跳的频率
     health-check-url-path: /actuator/health
+provider:
+#  host: http://PROVIDER
+  host: PROVIDER
+  orderBriefInfoURL: /order/order-brief-info
+  testPostURL: /test/insert
