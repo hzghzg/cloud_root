@@ -1,0 +1,1 @@
+INSERT INTO order_update (`order_id`,`status`,`created_date`,`last_modified_date`,`created_by`,`last_modified_by`,`version`) VALUES (1000000004436176400,'Created','2020-08-25 08:50:14','2020-08-25 08:50:14','system_user','system_user',0);
