@@ -5,3 +5,11 @@ spring:
     active: local
   application:
     name: provider
+  jpa:
+    hibernate:
+      ddl-auto: none  #决定是否自动生成表
+      use-new-id-generator-mappings: false
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: false

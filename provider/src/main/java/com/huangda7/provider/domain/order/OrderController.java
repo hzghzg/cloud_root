@@ -10,7 +10,7 @@ import java.util.List;
 @RequestMapping("/order")
 public class OrderController {
     @GetMapping(value = "/order-brief-info")
-    public ResponseEntity<List<OrderBriefInfoDTO>> getBLBriefInfo(@RequestParam("dateTime") String dateTime) {
+    public ResponseEntity<List<OrderBriefInfoDTO>> getOrderBriefInfo(@RequestParam("dateTime") String dateTime) {
         List<OrderBriefInfoDTO> orderBriefInfoDTOs = Collections.singletonList(OrderBriefInfoDTO.builder()
         .orderId(1000000004436176400L)
         .orderNum("9930448990222")
@@ -18,18 +18,4 @@ public class OrderController {
         .build());
         return ResponseEntity.ok(orderBriefInfoDTOs);
     }
-    @GetMapping
-    public String getBLBriefInfo() {
-        return "test";
-    }
-
-//    @GetMapping(value = "/bl-detail-info/{blId}")
-//    public ResponseEntity<BLDetailInfoDTO> getBLDetailInfo(@PathVariable("blId") Long blId) {
-//        BLDetailInfoDTO blDetailInfoDTO = BLDetailInfoDTO.builder()
-//            .billOfLadingId(blId)
-//            .billOfLadingNum("9930448990111")
-//            .blStatus("Prepare in Progress")
-//            .build();
-//        return ResponseEntity.ok(blDetailInfoDTO);
-//    }
 }

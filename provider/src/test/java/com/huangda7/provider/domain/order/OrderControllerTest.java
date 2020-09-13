@@ -24,7 +24,7 @@ class OrderControllerTest {
     private JacksonTester<List<OrderBriefInfoDTO>> orderBriefInfoDTOJacksonTester;
 
     @Test
-    void should_return_200_and_bl_brief_info_when_getBLBriefInfo_given_voyage_stop_and_support_offices() throws Exception {
+    void should_return_200_and_order_brief_info_when_getOrderBriefInfo_given_voyage_stop_and_support_offices() throws Exception {
         //given
         String dateTime = "20200913";
         OrderBriefInfoDTO expectOrderBriefInfoDTO = OrderBriefInfoDTO.builder()
@@ -45,10 +45,10 @@ class OrderControllerTest {
 //                .andExpect(status().isOk())
 //                .andReturn().getResponse().getContentAsString();
         //then
-        List<OrderBriefInfoDTO> actualBLBriefInfoDTOs = orderBriefInfoDTOJacksonTester.parse(response).getObject();
+        List<OrderBriefInfoDTO> actualOrderBriefInfoDTOs = orderBriefInfoDTOJacksonTester.parse(response).getObject();
         assertAll(
-                () -> assertThat(actualBLBriefInfoDTOs.size()).isEqualTo(1),
-                () -> assertThat(actualBLBriefInfoDTOs.get(0)).isEqualTo(expectOrderBriefInfoDTO)
+                () -> assertThat(actualOrderBriefInfoDTOs.size()).isEqualTo(1),
+                () -> assertThat(actualOrderBriefInfoDTOs.get(0)).isEqualTo(expectOrderBriefInfoDTO)
         );
     }
 }
