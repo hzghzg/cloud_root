@@ -26,7 +26,7 @@ public class TestService {
     private String testPostURL;
     @Autowired
     RestTemplate restTemplate;
-    public void getOrderBriefInfoFromProvider() {
+    public List<OrderBriefInfoDTO> getOrderBriefInfoFromProvider() {
         String dateTime = "test";
         String url = UriComponentsBuilder.newInstance()
                 .scheme("http").queryParam("dateTime",dateTime).host(providerHost).path(orderBriefInfoURL).build()
@@ -39,6 +39,7 @@ public class TestService {
         List<OrderBriefInfoDTO> orderBriefInfoDTOS = restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<OrderBriefInfoDTO>>() {
         }).getBody();
         System.out.println(orderBriefInfoDTOS);
+        return orderBriefInfoDTOS;
     }
 
     public void testPost() {

@@ -45,9 +45,9 @@ spring:
   #          consumer:
   #            concurrency: 8
   #            partitioned: true
-  #        order_update-output:
-  #          destination: COMPANY/-/D/PROJECT/SERVICE/PRIV/EVT/EVENT/V01/N/-
-  #          contentType: application/json
+        test_output:
+          destination: COMPANY/-/D/PROJECT/SERVICE/PRIV/EVT/EVENT/V01/N/-
+          contentType: application/json
   #          producer:
   #            partition-count: 15
   #            requiredGroups: xxx need update
