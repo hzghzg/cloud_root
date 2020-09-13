@@ -1,0 +1,52 @@
+# owner: default
+# queueName: CS/BCMS/USER_TASK/CREATE_USER_TASK/QUE.user_task_create_task
+# encodeURIComponentQueueName: CS%2FBCMS%2FUSER_TASK%2FCREATE_USER_TASK%2FQUE.user_task_create_task
+# subscriptionTopic: CS/*/*/BCMS/PROCESS_ENGINE/PRIV/EVT/CREATE_USER_TASK/V01/N/*
+# base64 encoded of admin:admin = YWRtaW46YWRtaW4=
+# Authorization: Basic YWRtaW46YWRtaW4=
+
+# create queue
+POST http://192.168.0.110:8080/SEMP/v2/config/msgVpns/default/queues
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic YWRtaW46YWRtaW4=
+Content-Type: application/json
+
+{
+	  "accessType": "exclusive",
+      "consumerAckPropagationEnabled": true,
+      "deadMsgQueue": "#DEAD_MSG_QUEUE",
+      "egressEnabled": true,
+      "eventBindCountThreshold": {
+        "clearPercent": 60,
+        "setPercent": 80
+      },
+      "eventMsgSpoolUsageThreshold": {
+        "clearPercent": 60,
+        "setPercent": 80
+      },
+      "eventRejectLowPriorityMsgLimitThreshold": {
+        "clearPercent": 60,
+        "setPercent": 80
+      },
+      "ingressEnabled": true,
+      "maxBindCount": 1000,
+      "maxDeliveredUnackedMsgsPerFlow": 10000,
+      "maxMsgSize": 10000000,
+      "maxMsgSpoolUsage": 1500,
+      "maxRedeliveryCount": 0,
+      "maxTtl": 0,
+      "msgVpnName": "default",
+      "owner": "default",
+      "permission": "consume",
+      "queueName": "COMPANY/PROJECT/SERVICE/EVENT/QUE.test_group",
+      "rejectLowPriorityMsgEnabled": false,
+      "rejectLowPriorityMsgLimit": 0,
+      "rejectMsgToSenderOnDiscardBehavior": "when-queue-enabled",
+      "respectMsgPriorityEnabled": false,
+      "respectTtlEnabled": false
+}
+
+###
+
+

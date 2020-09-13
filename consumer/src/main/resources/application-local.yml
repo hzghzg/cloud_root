@@ -7,6 +7,14 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10 #发送心跳的频率
     health-check-url-path: /actuator/health
+solace:
+  java:
+    clientPassword: admin
+    clientUsername: admin
+    connectRetries: 4
+    host: 192.168.0.110:55555
+    msgVpn: default
+    reconnectRetries: 4
 provider:
 #  host: http://PROVIDER
   host: PROVIDER

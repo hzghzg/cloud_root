@@ -5,6 +5,53 @@ spring:
     active: local
   application:
     name: consumer
+#  cloud:
+#    stream:
+#      bindings:
+#        customized-input:
+#          destination: myqueue
+#          group: my_group
+#          contentType: application/json
+#      default-binder: solace
+#      solace:
+#        default:
+#          consumer:
+#            provisionDurableQueue: false
+#            provisionSubscriptionsToDurableQueue: false
+#            provisionDmq: false
+  cloud:
+    stream:
+      default-binder: solace
+      solace:
+#        bindings:
+#          order_update-output:
+#            producer:
+#              appSpecExpressions: headers['partitionKey']
+        default:
+          consumer:
+            provisionDurableQueue: false
+            provisionSubscriptionsToDurableQueue: false
+            provisionDmq: false
+#            autoBindDmq: true
+#            autoCreateEndpoints: false
+#            topicPatternCompany: TEST
+#            topicPatternApp: TEST
+#            topicPatternComponent: TEST_CHECKLIST
+      bindings:
+        get-order-info-input:
+          destination: COMPANY/PROJECT/SERVICE/EVENT/QUE
+          group: test_group
+          contentType: application/json
+  #          consumer:
+  #            concurrency: 8
+  #            partitioned: true
+  #        order_update-output:
+  #          destination: COMPANY/-/D/PROJECT/SERVICE/PRIV/EVT/EVENT/V01/N/-
+  #          contentType: application/json
+  #          producer:
+  #            partition-count: 15
+  #            requiredGroups: xxx need update
+  #            partitionKeyExpression: headers['partitionKey']
 ribbon:
   ConnectTimeout: 5000
   ReadTimeout: 5000

@@ -20,7 +20,7 @@
         <java.version>11</java.version>         <!-- versions -->
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
 <!--        <spring-boot-admin.version>2.2.3</spring-boot-admin.version>-->
-<!--        <solace.version>1.2.1.9-OOCL</solace.version>-->
+        <solace.version>2.0.1</solace.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <skipCheck>true</skipCheck>
