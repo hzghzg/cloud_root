@@ -23,6 +23,11 @@
             <artifactId>spring-cloud-starter-stream-solace</artifactId>
             <version>${solace.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-test-support</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>

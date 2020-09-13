@@ -5,7 +5,6 @@ import com.huangda7.consumer.application.dto.OrderBriefInfoDTO;
 import com.huangda7.consumer.application.event.GetOrderInfoEvent;
 import com.huangda7.consumer.application.event.OutputEvent;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +15,8 @@ public class OrderService {
     TestService testService;
     @Autowired
     OrderChannel orderChannel;
+    @Autowired
+    OrderProcessor orderProcessor;
 
     public void startGetOrderInfoProcess(GetOrderInfoEvent getOrderInfoEvent) {
         List<OrderBriefInfoDTO> orderBriefInfoDTOList = testService.getOrderBriefInfoFromProvider();
@@ -23,14 +24,8 @@ public class OrderService {
                 .partitionKey("test_output_partition_key")
                 .orderBriefInfoDTOList(orderBriefInfoDTOList)
                 .build();
-        publishMessage(outputEvent);
+        orderProcessor.publishMessage(outputEvent);
 
     }
 
-
-    public void publishMessage(OutputEvent outputEvent) {
-        orderChannel.testOutput().send(MessageBuilder.withPayload(outputEvent)
-                .setHeader("PARTITION_KEY", outputEvent.getPartitionKey())
-                .build());
-    }
 }
