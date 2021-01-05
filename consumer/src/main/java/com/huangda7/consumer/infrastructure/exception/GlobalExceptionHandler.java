@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class ControllerException {
+public class GlobalExceptionHandler {
 
   @ExceptionHandler(CustomizeException.class)
   public ResponseEntity handleCustomizeException(CustomizeException customizeException) {
